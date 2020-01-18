@@ -1,0 +1,35 @@
+
+function y = randomwalk(N)
+
+X = zeros([1,N+1]);
+
+t = (0:1:N);
+
+for i = 1:N
+
+    toss = rand();
+
+    if (toss>1/2)
+
+        X(i+1) =  X(i)+1;
+
+    else
+        
+        X(i+1) =  X(i)-1;
+ 
+
+   end
+end
+plot(t, X,'o','LineWidth',2)
+
+title('Random walk','FontSize',16,'FontWeight','normal','Color','k', 'Interpreter', 'latex')
+
+xlabel('$t$','FontSize',16,'FontWeight','bold','Color','k', 'Interpreter', 'latex')
+
+
+ylabel('$X_{t}$','FontSize',16,'FontWeight','bold','Color','k','Interpreter', 'latex')
+
+%yticks((-N:1:N))
+
+
+set(get(gca,'YLabel'),'Rotation',0)
