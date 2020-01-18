@@ -1,3 +1,4 @@
+%The function randomwalk returns a random set of positions between (0,0) and (0,N) 
 
 function y = randomwalk(N)
 
@@ -6,7 +7,7 @@ X = zeros([1,N+1]);
 t = (0:1:N);
 
 for i = 1:N
-
+    %rand returns a random number between 0 and 1  
     toss = rand();
 
     if (toss>1/2)
@@ -20,6 +21,8 @@ for i = 1:N
 
    end
 end
+
+
 plot(t, X,'o','LineWidth',2)
 
 title('Random walk','FontSize',16,'FontWeight','normal','Color','k', 'Interpreter', 'latex')
